@@ -15,13 +15,16 @@ public class GreatCircleDistanceCalc implements IDistanceCalcStrategy
         double latitudeDistance = convertDegree2Radian(coordinate2.getLatitude()-coordinate1.getLatitude());
         double longtitudeDistance = convertDegree2Radian(coordinate2.getLongitude()-coordinate1.getLongitude());
 
-        coordinate1.setLatitude(convertDegree2Radian(coordinate1.getLatitude()));
-        coordinate2.setLatitude(convertDegree2Radian(coordinate2.getLatitude()));
+        double c1Lattitude = convertDegree2Radian(coordinate1.getLatitude());
+        double c2Lattitude = convertDegree2Radian(coordinate2.getLatitude());
+
+
 
         double a = Math.pow(Math.sin(latitudeDistance / 2), 2)
                 + Math.pow(Math.sin(longtitudeDistance / 2), 2)
-                * Math.cos(coordinate1.getLatitude()) * Math.cos(coordinate2.getLatitude());
+                * Math.cos(c1Lattitude) * Math.cos(c2Lattitude);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        System.out.println(c*EARTH_RADIUS);
         return c*EARTH_RADIUS;
     }
     public double convertDegree2Radian(double degree)

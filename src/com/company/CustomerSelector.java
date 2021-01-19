@@ -26,7 +26,7 @@ public class CustomerSelector
         this.distanceCalcStrategy = distanceCalcStrategy;
         for(Customer customer:customerList)
         {
-            double distance = distanceCalcStrategy.calcDistance(customer.getCoordinate(),coordinate);
+            double distance = distanceCalcStrategy.calcDistance(coordinate, customer.getCoordinate());
             if(distance<=range)
             {
                 inviteeList.add(customer);
