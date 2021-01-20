@@ -3,7 +3,6 @@ import com.company.model.Customer;
 import com.company.model.GPSCoordinate;
 import com.company.model.ICoordinate;
 import org.json.JSONObject;
-import org.json.simple.parser.ParseException;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ public class CustomerInfoParser
     public final String LATITUDE = "latitude";
     public final String LONGITUDE = "longitude";
 
-    public List<Customer> getCustomers(String filePath) throws IOException, ParseException
+    public List<Customer> getCustomers(String filePath) throws IOException
     {
         List<JSONObject> customersJsonObjList = new ArrayList<>();
         File file = new File(filePath);
