@@ -39,4 +39,6 @@ It is the main class that calls the methods that perform the essential operation
 (In IntelliJ: Project Structure>Libraries>+>From Maven> Search for org.json and import it)
 * Run 'Main' (which is in EventOrganiser class)
 * output.txt will be generated in project root directory after the program is running. 
-
+* junit-4.13 jar must be imported for unit tests. 
+(In IntelliJ: Project Structure>Libraries>+>From Maven> Search for junit, select version 4.13 and import it)
+* right click "tests" directory and select "Run All Test Cases"
