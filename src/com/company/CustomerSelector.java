@@ -2,7 +2,6 @@ package com.company;
 
 import com.company.model.Customer;
 import com.company.model.ICoordinate;
-import com.company.util.GreatCircleDistanceCalc;
 import com.company.util.IDistanceCalcStrategy;
 
 import java.util.ArrayList;
@@ -23,6 +22,11 @@ public class CustomerSelector
     public List<Customer> findInvitees(List<Customer> customerList, ICoordinate coordinate, IDistanceCalcStrategy distanceCalcStrategy, double range)
     {
         List<Customer> inviteeList = new ArrayList<>();
+        if(customerList.isEmpty())
+        {
+            return inviteeList;
+        }
+
         this.distanceCalcStrategy = distanceCalcStrategy;
         for(Customer customer:customerList)
         {
